@@ -12,15 +12,29 @@ const currentscore1El = document.getElementById('current--1');
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+let scores, currentScore, activePlayer, playing;
+
+const init = function(){
+// Initial Values
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
 
 // Starting Conditions
-score0El.textContent = 0;
-score1El.textContent = 0;
-diceEl.classList.add('hidden');
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  currentscore0El.textContent = 0;
+  currentscore1El.textContent = 0;
+
+  diceEl.classList.add('hidden');
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+}
+
+init();
 
 btnRoll.addEventListener('click', function () {
   if(playing){
@@ -78,3 +92,14 @@ btnHold.addEventListener('click', function () {
 
   } 
 });
+
+btnNew.addEventListener('click', function(){
+  // btnNew.addEventListener('click', init(){} : This Method could be written in this way
+
+
+  init();
+
+
+  
+
+})
