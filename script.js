@@ -81,7 +81,7 @@ btnHold.addEventListener('click', function () {
       
   
   } else {
-        document.getElementById(`score--${activePlayer}`).textContent = 'WON';
+        document.getElementById(`score--${activePlayer}`).textContent = 'You WON';
         document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
         document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
         playing = false;
